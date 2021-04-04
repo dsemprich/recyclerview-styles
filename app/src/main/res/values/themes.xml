@@ -16,21 +16,34 @@
 
     <!-- People Feature -->
     <style name="PeopleCardCornersHeader" parent="@style/Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay_card_header_corners</item>
+    </style>
+    <style name="ShapeAppearanceOverlay_card_header_corners" parent="">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSizeTopLeft">8dp</item>
-        <item name="cornerSizeTopRight">8dp</item>
+        <item name="cornerSizeTopRight">16dp</item>
+        <item name="cornerSizeTopLeft">16dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
     </style>
     <style name="PeopleCardCornersItem" parent="@style/Widget.MaterialComponents.CardView">
-        <item name="cornerFamily">cut</item>
-        <item name="cornerSizeTopLeft">0dp</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay_card_content_corners</item>
+    </style>
+    <style name="ShapeAppearanceOverlay_card_content_corners" parent="">
+        <item name="cornerFamily">rounded</item>
         <item name="cornerSizeTopRight">0dp</item>
-        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeTopLeft">0dp</item>
         <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
     </style>
     <style name="PeopleCardCornersFooter" parent="@style/Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay_card_footer_corners</item>
+    </style>
+    <style name="ShapeAppearanceOverlay_card_footer_corners" parent="">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSizeBottomLeft">8dp</item>
-        <item name="cornerSizeBottomRight">8dp</item>
+        <item name="cornerSizeTopRight">0dp</item>
+        <item name="cornerSizeTopLeft">0dp</item>
+        <item name="cornerSizeBottomRight">16dp</item>
+        <item name="cornerSizeBottomLeft">16dp</item>
     </style>
 
     <style name="circleImageView" parent="">

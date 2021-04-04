@@ -6,7 +6,13 @@
     style="@style/PeopleCardCornersItem"
     android:id="@+id/people_list_root"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    app:cardElevation="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="0dp"
+    android:clickable="true"
+    android:focusable="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -14,9 +20,10 @@
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/user_image"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:scaleType="centerCrop"
+            android:layout_marginStart="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -30,7 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="first name"
-            android:textAppearance="?attr/textAppearanceListItem"
+            style="@style/TextAppearance.MaterialComponents.Headline6"
             app:layout_constraintStart_toEndOf="@id/user_image"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -40,7 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:text="last name"
-            android:textAppearance="?attr/textAppearanceListItem"
+            style="@style/TextAppearance.MaterialComponents.Headline6"
             app:layout_constraintStart_toEndOf="@+id/first_name"
             app:layout_constraintTop_toTopOf="@+id/first_name" />
 
@@ -50,9 +57,18 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="City"
-            android:textAppearance="?attr/textAppearanceListItem"
+            style="@style/TextAppearance.MaterialComponents.Caption"
             app:layout_constraintStart_toStartOf="@+id/first_name"
             app:layout_constraintTop_toBottomOf="@+id/first_name" />
+
+        <View
+            android:background="@color/cardview_shadow_start_color"
+            app:layout_constraintStart_toStartOf="@+id/first_name"
+            app:layout_constraintTop_toBottomOf="@id/city"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp"
+            android:layout_width="0dp"
+            android:layout_height="1dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

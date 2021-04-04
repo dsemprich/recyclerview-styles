@@ -20,6 +20,7 @@
         android:id="@+id/peopleLists_list"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/people_item_list"
+        android:layout_marginTop="8dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
