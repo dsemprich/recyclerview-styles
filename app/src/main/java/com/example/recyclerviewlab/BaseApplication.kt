@@ -2,6 +2,7 @@ package com.example.recyclerviewlab
 
 import android.app.Application
 import android.content.Context
+import androidx.annotation.VisibleForTesting
 import com.example.recyclerviewlab.sectionList.ContactsFragment
 import com.example.recyclerviewlab.sectionList.PeopleListModule
 import dagger.BindsInstance
@@ -34,7 +35,11 @@ class BaseApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
+        appComponent = DaggerAppComponent.factory().create(this)
+    }
 
+    @VisibleForTesting fun setTestComponent(component: AppComponent) {
+        appComponent = component
     }
 
 }

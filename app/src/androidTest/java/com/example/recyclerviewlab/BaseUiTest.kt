@@ -17,9 +17,6 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 abstract class BaseUiTest {
 
-    val activityRule = ActivityTestRule(MainActivity::class.java)
-        @Rule get
-
     @Before
     fun setup() {
         IdlingRegistry.getInstance().register(idlingResource)

@@ -1,5 +1,6 @@
 package com.example.recyclerviewlab.sectionList
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,6 +10,7 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.recyclerviewlab.BaseApplication
 import com.example.recyclerviewlab.R
 import kotlinx.android.synthetic.main.fragment_contacts.*
 import kotlinx.android.synthetic.main.fragment_contacts.view.*
@@ -29,6 +31,11 @@ class ContactsFragment : Fragment() {
         observeLoader()
         observePeopleLists(view)
         return view
+    }
+
+    override fun onAttach(context: Context) {
+        (context.applicationContext as BaseApplication).appComponent.inject(this)
+        super.onAttach(context)
     }
 
     private fun setupViewModel() {

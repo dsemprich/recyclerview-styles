@@ -19,4 +19,19 @@ class PeopleListModule {
             return PeopleResult.fromJson(PeopleMockData.peopleMockResponse(context))
         }
     }
+
+    @Provides
+    fun provideViewModelFactory(repository: PeopleListRepository) = PlaylistViewModelFactory(repository)
+
+    @Provides
+    fun provideMapper() = PeopleListMapper()
+
+    @Provides
+    fun provideService(api: PeopleListApi) = PeopleListService(api)
+
+    @Provides
+    fun provideRepository(
+        service: PeopleListService,
+        mapper: PeopleListMapper) = PeopleListRepository(service, mapper)
+
 }

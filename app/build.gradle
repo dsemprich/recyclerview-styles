@@ -82,4 +82,5 @@ dependencies {
     androidTestImplementation('com.schibsted.spain:barista:3.6.0') {
         exclude group: 'org.jetbrains.kotlin' // Only if you already use Kotlin in your project
     }
+    kaptAndroidTest "com.google.dagger:dagger-compiler:2.32"
 }
