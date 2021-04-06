@@ -3,7 +3,6 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-android-extensions'
     id 'kotlin-kapt'
-    id 'dagger.hilt.android.plugin'
     id 'androidx.navigation.safeargs.kotlin'
 }
 
@@ -60,14 +59,14 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'com.jakewharton.espresso:okhttp3-idling-resource:1.0.0'
-    implementation "com.google.dagger:hilt-android:$hilt_version"
     implementation 'com.jakewharton.espresso:okhttp3-idling-resource:1.0.0'
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 
     implementation("io.coil-kt:coil:1.1.1")
 
-    kapt "com.google.dagger:hilt-compiler:$hilt_version"
+    implementation 'com.google.dagger:dagger:2.32'
+    kapt 'com.google.dagger:dagger-compiler:2.32'
 
 
     testImplementation 'junit:junit:4.13.1'

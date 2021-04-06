@@ -10,12 +10,11 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recyclerviewlab.R
-import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_contacts.*
 import kotlinx.android.synthetic.main.fragment_contacts.view.*
 import javax.inject.Inject
 
-@AndroidEntryPoint
+
 class ContactsFragment : Fragment() {
 
     private lateinit var viewModel: PeopleListViewModel
