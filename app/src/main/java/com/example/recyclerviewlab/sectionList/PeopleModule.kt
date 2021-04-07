@@ -1,6 +1,9 @@
 package com.example.recyclerviewlab.sectionList
 
+import android.app.Application
 import android.content.Context
+import com.example.recyclerviewlab.backend.Backend
+import com.example.recyclerviewlab.backend.BackendImpl
 import com.example.recyclerviewlab.mockData.PeopleMockData
 import com.jakewharton.espresso.OkHttp3IdlingResource
 import dagger.Module
@@ -27,11 +30,14 @@ class PeopleListModule {
     fun provideMapper() = PeopleListMapper()
 
     @Provides
-    fun provideService(api: PeopleListApi) = PeopleListService(api)
+    fun provideService(backend: Backend) = PeopleListService(backend)
 
     @Provides
     fun provideRepository(
         service: PeopleListService,
         mapper: PeopleListMapper) = PeopleListRepository(service, mapper)
+
+    @Provides
+    fun provideBackend(context: Context) : Backend = BackendImpl(context)
 
 }

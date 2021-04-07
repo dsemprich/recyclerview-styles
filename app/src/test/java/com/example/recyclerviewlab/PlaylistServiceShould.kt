@@ -1,5 +1,7 @@
 package com.example.recyclerviewlab
 
+import com.example.recyclerviewlab.backend.Backend
+import com.example.recyclerviewlab.backend.sendAwait
 import com.example.recyclerviewlab.sectionList.*
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.times
@@ -16,7 +18,7 @@ import java.lang.RuntimeException
 @ExperimentalCoroutinesApi
 class PeopleListServiceShould : BaseUnitTest() {
 
-    private val api: PeopleListApi = mock()
+    private val api: Backend = mock()
     private lateinit var service: PeopleListService
     private val peoplesList: PeopleResult = mock()
 
@@ -24,7 +26,7 @@ class PeopleListServiceShould : BaseUnitTest() {
     fun fetchPlaylistsFromApi() = runBlockingTest {
         service = PeopleListService(api)
         service.fetchPeopleLists().first()
-        verify(api, times(1)).fetchAllPeopleLists()
+        verify(api, times(1)).sendAwait()
     }
 
     @Test
@@ -43,13 +45,13 @@ class PeopleListServiceShould : BaseUnitTest() {
     }
 
     private suspend fun mockErrorCase() {
-        whenever(api.fetchAllPeopleLists()).thenThrow(RuntimeException("Damn backend developers"))
+        whenever(api.sendAwait()).thenThrow(RuntimeException("Damn backend developers"))
 
         service = PeopleListService(api)
     }
 
     private suspend fun mockSuccessfulCase() {
-        whenever(api.fetchAllPeopleLists()).thenReturn(peoplesList)
+        whenever(api.sendAwait()).thenReturn(peoplesList)
         service = PeopleListService(api)
     }
 }

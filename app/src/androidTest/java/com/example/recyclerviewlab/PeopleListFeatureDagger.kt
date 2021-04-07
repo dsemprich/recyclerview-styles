@@ -33,7 +33,6 @@ class PeopleListFeatureDagger : BaseUiTest() {
         }
     }
 
-
     @Test
     fun displaysListOfPlayLists() {
         assertRecyclerViewItemCount(R.id.peopleLists_list, 3*3)
